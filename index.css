@@ -2,6 +2,35 @@ body{
     margin: 0;
     padding: 0;  
 }
+h1{
+    background-color:black;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+    filter: invert(0);
+}
+h3{
+    color: royalblue;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Arial', cursive;
+    font-size: 28px;
+    text-shadow: 4px 4px 4px #aaa;
+    filter: invert(0);
+}
+div#code{
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Comic sans', cursive;
+    font-size: 20px;
+
+}
 #userProfile{
     display: table;
     width: auto;
@@ -62,4 +91,29 @@ p{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 3px;
+}
+
+@media only screen and (max-width: 870px) {
+#users{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 3px;
+}
+}
+@media only screen and (max-width: 745px) {
+#users{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 3px;
+}
+}
+@media only screen and (max-width: 450px) {
+#users{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 3px;
+}
 }
