@@ -86,11 +86,73 @@ div#code{
 p{
     max-width: 300px;
 }
+div#page{
+  display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    
+}
+.gigantic.pagination a {
+    height: 60px;
+    width: 60px;
+    font-size: 20px;
+    line-height: 40px;
+}
+.pagination a {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    border-right: 1px solid #CDCDCD;
+    border-left: 1px solid #CDCDCD;
+    color: #555555;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Times, 'Times New Roman', Georgia, Palatino;
+    background-color: #f3f3f3;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f3f3), color-stop(100%, lightgrey));
+    background-image: -webkit-linear-gradient(#f3f3f3, lightgrey);
+    background-image: linear-gradient(#f3f3f3, lightgrey);
+}
+.gigantic.pagination input {
+    width: auto;
+    height: 60px;
+    font-size: 20px;
+}
+.pagination input {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 120px;
+    height: 20px;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+}
+a.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+.gigantic.pagination {
+    margin: 30px 0;
+}
+.pagination {
+    display: inline-flex;
+    border: 1px solid #CDCDCD;
+    border-radius: 3px;
+}
 #users{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 3px;
+    grid-auto-flow: dense;
 }
 
 @media only screen and (max-width: 870px) {
