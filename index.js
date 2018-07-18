@@ -89,8 +89,10 @@ function addPersons(data) { //fuction that gets the the response as "data"
         let newName = $('#userName').val();
         let newAge = $('#userAge').val();
         let newPhoto = $('#userPhoto').val();
-        var url3 = 'https://intern-challenge.herokuapp.com/persons/create';//URL that POST request is sent to
-
+        if (newAge === "" && newName === "" && newDescription === "") {
+            $('.error').html("Only the photo field can be empty. Please fill the rest<br>");
+        }else{
+             var url3 = 'https://intern-challenge.herokuapp.com/persons/create';//URL that POST request is sent to 
         var addingNewUser = {
             "name": newName,
             "age": newAge,
@@ -104,8 +106,8 @@ function addPersons(data) { //fuction that gets the the response as "data"
             dataType: "json", // type of data to be sent via the POST method
             method: 'POST', // POST method to send data to the API
             data: addingNewUser, // data to se sent to the API
-        }).done(function(resp) {
-           //let htmlContentNew = `<div id="userProfile"> <figure ><img class="imgThumb"src="${resp.person.photo}"></figure><span>${resp.person.name}</span><br><div class="fullProfile" hidden> <br><label>Age:</label><span>${resp.person.age}</span><br><label>ID code:</label><span>${resp.person.id}</span><br><label>Description:</label><article>${resp.person.description}</article><a class="editLink" href="#">[EDIT]</a><div id ='emptyDiv' hidden><input class="input" value=${resp.person.id} hidden><br>New Description:<br><textarea placeholder='Enter text here' required></textarea><br><button class='editText'>Submit</button></div></div><button class="button" data-text-swap="Close Details"><span>View Details </span></button></div>`;//data from the response is formatted in html with classes and ids that are styled using CSS.
+        }).done(function (resp) {
+            //let htmlContentNew = `<div id="userProfile"> <figure ><img class="imgThumb"src="${resp.person.photo}"></figure><span>${resp.person.name}</span><br><div class="fullProfile" hidden> <br><label>Age:</label><span>${resp.person.age}</span><br><label>ID code:</label><span>${resp.person.id}</span><br><label>Description:</label><article>${resp.person.description}</article><a class="editLink" href="#">[EDIT]</a><div id ='emptyDiv' hidden><input class="input" value=${resp.person.id} hidden><br>New Description:<br><textarea placeholder='Enter text here' required></textarea><br><button class='editText'>Submit</button></div></div><button class="button" data-text-swap="Close Details"><span>View Details </span></button></div>`;//data from the response is formatted in html with classes and ids that are styled using CSS.
             //$('#page').append(htmlContentNew);
             alert("User has been created!");
             console.log(resp);
@@ -113,6 +115,8 @@ function addPersons(data) { //fuction that gets the the response as "data"
             // Changes to description is automatically displayed on the browser.
         }).fail(requestError);
 
+        }
+       
     })// if successful 'updatePersons' is executed, else 'requestError' is returned
 }
 
